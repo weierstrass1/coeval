@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-05-2018 a las 02:33:53
+-- Tiempo de generación: 23-05-2018 a las 06:36:33
 -- Versión del servidor: 10.1.31-MariaDB
 -- Versión de PHP: 7.0.29
 
@@ -71,7 +71,8 @@ INSERT INTO `evaluation` (`evaluation_id`, `name`, `date`, `tittle`, `text`) VAL
 (3, 'PSU', NULL, 'PSU 2018', 'Siga las siguientes instrucciones'),
 (4, 'PAA', '0000-00-00', 'PAA 1999', 'SFA'),
 (5, 'SEL', '2018-05-12', 'CELL', 'ASE'),
-(9, 'PSU', '2018-05-12', 'PSU 2018', 'PSU del año 2018');
+(9, 'PSU', '2018-05-12', 'PSU 2018', 'PSU del año 2018'),
+(10, 'PSU 2018', '2018-05-23', 'Prueba seleccion universitaria', 'Para esta prueba debe utilizar lapiz pasta');
 
 -- --------------------------------------------------------
 
@@ -379,7 +380,7 @@ ALTER TABLE `answer`
 -- AUTO_INCREMENT de la tabla `evaluation`
 --
 ALTER TABLE `evaluation`
-  MODIFY `evaluation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `evaluation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `evaluation_section`
