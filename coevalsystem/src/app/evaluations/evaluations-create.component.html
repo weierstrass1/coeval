@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            {{tittle}}
+        </div>
+        <div class="card-block">
+            <form novalidate [formGroup]="form">
+                <div class="form-group">
+                    <label for="name">Nombre:</label>
+                    <input type="text" class="form-control" id="name" formControlName="name">
+                    <div *ngIf="form.controls.name.errors && form.controls.name.touched">
+                        <div *ngIf="form.controls.name.errors.required" class="alert alert-danger">
+                            Se requiere el nombre de la evaluación.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="tittle">Titulo:</label>
+                    <input type="text" class="form-control" id="tittle" formControlName="tittle">
+                    <div *ngIf="form.controls.tittle.errors && form.controls.tittle.touched">
+                        <div *ngIf="form.controls.tittle.errors.required" class="alert alert-danger">
+                            Se requiere el titulo de la evaluación.
+                        </div>
+                        <div *ngIf="form.controls.tittle.errors.maxlength" class="alert alert-danger">
+                            El titulo puede tener maximo 30 caracteres.
+                        </div>
+                    </div>
+                </div>   
+                <div class="form-group">
+                    <label for="text">Contenido:</label>
+                    <input type="text" class="form-control" id="text" formControlName="text">
+                    <div *ngIf="form.controls.text.errors && form.controls.text.touched">
+                        <div *ngIf="form.controls.text.errors.required" class="alert alert-danger">
+                            Se requiere el texto de la evaluación.
+                        </div>
+                    </div>
+                </div>   
+                <button class="btn btn-primary" (click)='loadEvaluation()' [disabled]="!form.valid">Enviar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
