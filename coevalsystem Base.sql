@@ -25,6 +25,8 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `admin`
+--
 
 CREATE TABLE `admin` (
   `admin_id` int(11) NOT NULL,
