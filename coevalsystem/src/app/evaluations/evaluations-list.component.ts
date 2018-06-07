@@ -7,7 +7,7 @@ import {Evaluation} from './evaluation';
 @Component({
   selector: 'evaluations-list',
   templateUrl: './evaluations-list.component.html',
-  styleUrls: ['./evaluations.component.css']
+  styleUrls: ['./evaluations.component.css'],
 })
 export class EvaluationsListComponent implements OnInit {
 

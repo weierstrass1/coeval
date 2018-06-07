@@ -12,6 +12,8 @@ import { UsersElementComponent } from './users/users-element.component';
 import { EvaluationsCreateComponent } from './evaluations/evaluations-create.component';
 import { EvaluationsListComponent } from './evaluations/evaluations-list.component';
 import { EvaluationsElementComponent } from './evaluations/evaluations-element.component';
+import { Step2Component } from './step2/step2.component';
+import { Step3Component } from './step3/step3.component';
 
 const appRoutes: Routes = [
     {path: 'myaccount', component: MyaccountComponent,
@@ -32,6 +34,8 @@ const appRoutes: Routes = [
     children: [
         {path: '', redirectTo: 'list', pathMatch:'full'},
         {path: 'create', component: EvaluationsCreateComponent},
+        {path: 'create/step2', component: Step2Component},
+        {path: 'create/step3', component: Step3Component},
         {path: 'list', component: EvaluationsListComponent},
         {path: 'list/:pag', component: EvaluationsListComponent},
         {path: 'element/:id', component: EvaluationsElementComponent}

@@ -17,6 +17,9 @@ import { EvaluationsCreateComponent } from './evaluations/evaluations-create.com
 import { EvaluationsListComponent } from './evaluations/evaluations-list.component';
 import { EvaluationsElementComponent } from './evaluations/evaluations-element.component';
 import {EvaluationService} from './evaluations/evaluation.service';
+import { Step2Component } from './step2/step2.component';
+import { Step3Component } from './step3/step3.component';
+import {UserService} from './user.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,9 @@ import {EvaluationService} from './evaluations/evaluation.service';
     UsersElementComponent,
     EvaluationsCreateComponent,
     EvaluationsListComponent,
-    EvaluationsElementComponent
+    EvaluationsElementComponent,
+    Step2Component,
+    Step3Component
   ],
   imports: [
     BrowserModule,
@@ -39,7 +44,7 @@ import {EvaluationService} from './evaluations/evaluation.service';
     HttpModule,
     AppRoutingModule,
   ],
-  providers: [EvaluationService],
+  providers: [EvaluationService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

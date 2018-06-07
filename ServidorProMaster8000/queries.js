@@ -45,6 +45,8 @@ function databaseMethods()
         })
     }
 
+
+
     this.updateUserLogin=function (data,response)
     {
         conection.obtain(function(e,con)
@@ -90,6 +92,25 @@ function databaseMethods()
         conection.obtain(function(e,con)
         {
             con.query('SELECT * FROM user,user_data WHERE user.user_data_id=user_data.user_data_id AND user_id =?',id,function(error,result)
+            {
+                con.release();
+                if(error)
+                {
+                    response.send('Error at trying to obtain user by id.');
+                }
+                else
+                {
+                    response.send(result);
+                }
+            })
+        })
+    }
+
+    this.getLastUser = function(id, response)
+    {
+        conection.obtain(function(e,con)
+        {
+            con.query('SELECT MAX(user_id) AS user_id FROM user',id,function(error,result)
             {
                 con.release();
                 if(error)

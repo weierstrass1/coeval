@@ -29,6 +29,11 @@ function http()
             db.getUserById(request.params.id,response);
         })
 
+        app.get('/userLast',function(request,response)
+        {
+            db.getLastUser(request.params.id,response);
+        })
+
         app.post('/user/',function(request,response)
         {
             db.postCompleteUser(request.body, response);

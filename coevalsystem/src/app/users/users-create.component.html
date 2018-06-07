@@ -1,1 +1,72 @@
-<h1>Create</h1>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            {{tittle}}
+        </div>
+        <div class="card-block">
+            <form novalidate [formGroup]="form1">
+                <div class="form-group">
+                    <label for="first_name">Nombre:</label>
+                    <input type="text" class="form-control" id="first_name" formControlName="first_name">
+                    <div *ngIf="form1.controls.first_name.errors && form1.controls.first_name.touched">
+                        <div *ngIf="form1.controls.first_name.errors.required" class="alert alert-danger">
+                            Se requiere el Nombre.
+                        </div>
+                        <div *ngIf="form1.controls.first_name.errors.maxlength" class="alert alert-danger">
+                            El Nombre puede tener maximo 30 caracteres.
+                        </div>
+                    </div>
+                </div>   
+                <div class="form-group">
+                    <label for="last_name">Apellido:</label>
+                    <input type="text" class="form-control" id="last_name" formControlName="last_name">
+                    <div *ngIf="form1.controls.last_name.errors && form1.controls.last_name.touched">
+                        <div *ngIf="form1.controls.last_name.errors.required" class="alert alert-danger">
+                            Se requiere el apellido.
+                        </div>
+                        <div *ngIf="form1.controls.last_name.errors.maxlength" class="alert alert-danger">
+                            El apellido puede tener maximo 30 caracteres.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Sexo:</label>
+                    <input type="number" class="form-control" id="gender" formControlName="gender" min="0" max="1">
+                    <div *ngIf="form1.controls.gender.errors && form1.controls.gender.touched">
+                        <div *ngIf="form1.controls.gender.errors.required" class="alert alert-danger">
+                            Se requiere el sexo.
+                        </div>
+                    </div>
+                </div> 
+                <div class="form-group">
+                    <label for="career">Carrera:</label>
+                    <input type="text" class="form-control" id="career" formControlName="career">
+                    <div *ngIf="form1.controls.career.errors && form1.controls.career.touched">
+                        <div *ngIf="form1.controls.career.errors.required" class="alert alert-danger">
+                            Se requiere la carrera.
+                        </div>
+                        <div *ngIf="form1.controls.career.errors.maxlength" class="alert alert-danger">
+                            La carrera puede tener maximo 50 caracteres.
+                        </div>
+                    </div>
+                </div> 
+            </form>
+            <form novalidate [formGroup]="form2">
+                <div class="form-group">
+                    <label for="username">Usuario:</label>
+                    <input type="text" class="form-control" id="username" formControlName="username">
+                    <div *ngIf="form2.controls.username.errors && form2.controls.username.touched">
+                        <div *ngIf="form2.controls.username.errors.required" class="alert alert-danger">
+                            Se requiere el Usuario.
+                        </div>
+                        <div *ngIf="form2.controls.username.errors.maxlength" class="alert alert-danger">
+                            El Nombre puede tener maximo 20 caracteres.
+                        </div>
+                    </div>
+                </div>   
+            </form>
+            <button class="btn btn-primary" (click)='loadUser()' [disabled]="!form1.valid || !form2.valid">Enviar</button>
+        </div>
+    </div>
+</div>
+
