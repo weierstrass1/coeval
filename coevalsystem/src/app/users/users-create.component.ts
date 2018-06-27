@@ -53,26 +53,21 @@ export class UsersCreateComponent implements OnInit {
   ngOnInit() {
   }
 
-  loadUser()
+  loadLogin()
   {
-    this.service.postUser(this.form1.value)
-    .subscribe(rt => console.log(rt),er => console.log(er),() => console.log('OK'));
-
-    this.service.getUserLast().subscribe(rs=>this.a=rs,
-      er =>console.log(er),
-      ()=>console.log(this.a));
-
-    this.form2 = this.fb.group({
-      user_id: this.a,
-      username: ['',Validators.compose([
-        Validators.required,
-        Validators.maxLength(20)
-      ])],
-      password: "1234"
-    });
+    this.form2.setValue({user_id:this.a});
 
     this.service.postUserLogin(this.form2.value)
     .subscribe(rt => console.log(rt),er => console.log(er),() => console.log('OK'));
+  }
+
+  loadUser()
+  {
+    this.service.postUser(this.form1.value)
+    .subscribe(rt => console.log(rt),er => console.log(er),
+    () => this.service.getUserLast().subscribe(rs=>this.a=rs,
+      er =>console.log(er),
+      ()=>this.loadLogin()));
   }
 
 }
